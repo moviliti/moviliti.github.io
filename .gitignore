@@ -1,1 +1,5 @@
-
+# auto-generated
+.DS_Store
+*/.DS_Store
+.zed
+*/.zed
