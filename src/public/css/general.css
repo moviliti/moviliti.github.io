@@ -1,0 +1,161 @@
+:root {
+    --menuBar-height: 50px;
+    --popup-borderRadius: 10px;
+    --logoTunnel-offsetX: 35px;
+    --logoTunnel-offsetY: 75px;
+    --logoTunnel-height: 19px;
+    --logo-paddingLeft: 5px;
+    --button-paddingX: 15px;
+    --button-paddingY: 5px;
+
+    /*** THEME (DEFAULT): ***/
+    --standardShadow: 2px 2px 2px rgba(0,0,0,0.7);
+    --neumorphicShadow: 1px 1px 5px rgba(255,255,255,0.4), -1px -1px 10px rgba(0,0,0,0.9);
+    --floatShadow: 0px 0px 15px var(--c5);
+    --c0: #081818;
+    --c1: #ffffff;
+    --c2: #40d060;
+    --c3: #203030;
+    --c3a: rgba(32,48,48,0.5);
+    --c4: #606060;
+    --c5: #080808;
+    --c6: #080808;
+    --c7: #484848;
+    --c8: #000000;
+    /*** :THEME (DEFAULT) ***/
+
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: black;
+    /*scrollbar-color: var(--c4) transparent;
+    scrollbar-arrow-color: none;*/
+}
+@media (prefers-color-scheme: light) { :root {
+    /*** THEME (LIGHT MODE): ***/
+    --standardShadow: 2px 2px 2px rgba(0,0,0,0.7);
+    --neumorphicShadow: 1px 1px 3px rgba(0,0,0,0.7), -1px -1px 5px rgba(255,255,255,0.7);
+    --floatShadow: 5px 5px 20px rgba(0,0,0,0.7);
+    --c0: #d0d0d0 !important;
+    --c1: #080808 !important;
+    --c2: #00b840 !important;
+    --c3: #c0c0c0 !important;
+    --c3a: rgba(192,192,192,0.5) !important;
+    --c4: #d8d8d8 !important;
+    --c5: #ffffff !important;
+    --c6: #d8d8d8 !important;
+    --c7: #a0a0a0 !important;
+    --c8: #e0e0e0 !important;
+    /*** :THEME (LIGHT MODE) ***/
+} }
+
+
+@font-face {
+    font-family: Comfortaa;
+    src: url("../resources/fonts/Comfortaa/static/Comfortaa-Regular.ttf");
+    font-display: block;
+}
+@font-face {
+    font-family: Comfortaa-Light;
+    src: url("../resources/fonts/Comfortaa/static/Comfortaa-Light.ttf");
+    font-display: block;
+}
+@font-face {
+    font-family: Comfortaa-Bold;
+    src: url("../resources/fonts/Comfortaa/static/Comfortaa-Bold.ttf");
+    font-display: block;
+}
+
+
+body, div, h1, h2, h3, h4, p {
+    margin: 0;
+    color: var(--c1);
+}
+a {
+    text-decoration: none;
+}
+span > a, h1 > a, h2 > a, h3 > a, h4 > a, p > a {
+    color: var(--c2);
+}
+span {
+    font-family: 'Comfortaa', sans-serif;
+}
+h1, h2, h3, h4 {
+    font-family: 'Comfortaa-bold', sans-serif;
+}
+icon {
+    display: inline-block;
+    aspect-ratio: 1;
+    height: 100%;
+    background-size: contain;
+    overflow: hidden;
+}
+
+body {
+    background-color: var(--c0);
+}
+
+.f, .fJustifyA, .fJustifyB, .fJustifyC, .fJustifyE, .fAlignC {
+    display: flex;
+}
+.fJustifyE {
+    justify-content: end;
+}
+.fJustifyA {
+    justify-content: space-around;
+}
+.fJustifyB {
+    justify-content: space-between;
+}
+.fJustifyC {
+    justify-content: center;
+}
+.fAlignC {
+    align-items: center;
+}
+.pixelArt {
+    image-rendering: pixelated;
+}
+.not-pixelArt {
+    image-rendering: auto;
+}
+.fillX {
+    width: 100%;
+}
+.fillY {
+    height: 100%;
+}
+.fFill {
+    flex-grow: 1;
+}
+.circle {
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+.inclBorderSize {
+    box-sizing: border-box;
+}
+.rel {
+    position: relative;
+}
+.abs {
+    position: absolute;
+}
+.imgBG {
+    background-size: contain;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+}
+.text-noWrap {
+    text-wrap: nowrap;
+}
+.absCenterX {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.absCenterY {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}

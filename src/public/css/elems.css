@@ -1,0 +1,172 @@
+/*** SNIPPETS: ***/
+.menu {
+    visibility: hidden;
+    padding-top: calc(1em + (2 * var(--button-paddingY) + 15px));
+    cursor: default;
+}
+.menu-item {
+    cursor: pointer;
+}
+.menu-floating {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: opacity 300ms;
+    z-index: 10;
+}
+*:hover > .menu {
+    visibility: visible;
+}
+*:hover > .menu-floating {
+    opacity: 1;
+}
+.menu-floating > .menu-itemsCon {
+    background-color: var(--c3);
+    border-radius: var(--popup-borderRadius);
+    box-shadow: var(--floatShadow);
+    overflow: hidden;
+}
+.menu-floating .menu-item {
+    padding: 5px 5px;
+}
+.menu-floating a:hover > .menu-item {
+    background-color: var(--c7);
+}
+
+.menuButton {
+    border-radius: 20px;
+    box-shadow: var(--neumorphicShadow);
+    background-color: var(--c3a);
+}
+.menuButton .buttonSelf {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--button-paddingY) var(--button-paddingX);
+}
+.menuButtonContent span {
+    color: transparent;
+    background-color: var(--c1);
+    background-image: linear-gradient(90deg, var(--c8), var(--c5));
+    background-clip: text;
+}
+
+.vehicleCon {
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+}
+.vehicle {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-size: auto 100%;
+    transition-timing-function: ease-in;
+}
+.vehicle[data-vehicleDirection="left"] {
+    background-position-x: left;
+}
+
+.pfp {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-size: cover;
+}
+.pfp.accButton-pfp {
+    height: 40px;
+    background-size: 42px;
+    background-position: -1px 3px;
+}
+.navMenu {
+    text-wrap: nowrap;
+}
+.uiButton {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: var(--c3);
+    pointer-events: all;
+}
+.uiButton icon {
+
+    background-color: var(--c1);
+    border-radius: 50%;
+}
+/*** :SNIPPETS ***/
+
+
+
+#menuBar {
+    width: 100%;
+    height: var(--menuBar-height);
+    background-image: linear-gradient(35deg, var(--c4), var(--c3) 150px);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0px 5px 42px black;
+}
+#menuBar .menu {
+    padding-top: calc(var(--menuBar-height) + 5px);
+}
+#menuBar-left, #menuBar-center, #menuBar-right {
+    display: flex;
+    justify-content: space-between;
+    height: var(--menuBar-height);
+}
+#menuBar-left {
+    padding-left: var(--logo-paddingLeft);
+}
+#menuBar-center {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+#menuBar-right {
+    padding-right: 10px;
+}
+#siteTitle {
+    height: 100px;
+    aspect-ratio: 15 / 8;
+    filter: drop-shadow(var(--standardShadow));
+}
+#siteTitle > .vehicleCon {
+    width: calc(100vw - var(--logoTunnel-offsetX) - var(--logo-paddingLeft));
+    height: var(--logoTunnel-height);
+    left: var(--logoTunnel-offsetX);
+    top: 75px;
+}
+#accButton {
+    border: 2px solid rgba(255,255,255,0.4);
+    box-shadow: var(--neumorphicShadow);
+}
+
+#bottomSpace {
+    width: 100%;
+    height: 40vh;
+}
+
+#footer {
+    padding-bottom: 20px;
+}
+#legal {
+    display: flex;
+    justify-content: center;
+    font-size: 0.65em;
+}
+
+#extraButtons {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+#extraButtons-left, #extraButtons-right {
+    padding: 15px;
+}

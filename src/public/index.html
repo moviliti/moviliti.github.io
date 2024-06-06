@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- INFO FOR BROWSER -->
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>moviliti</title>
+    <meta name="description" content="Together against disappointment - the most complete and accessible public transport app built on community." />
+    <link rel="icon" type="x-icon" href="/resources/img/logo/px_moviliti_favicon_bl_96x96_r24.png" />
+
+    <!-- LIBS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+    
+    <!-- STYLES -->
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/elems.css" />
+    <link rel="stylesheet" href="css/scroll.css" />
+    
+    <!-- SCRIPTS -->
+    <script src="js/common.js"></script>
+    <script src="js/varclass.js"></script>
+    <script src="js/snippets.js"></script>
+    <script src="js/buttons.js"></script>
+    <script src="js/icons.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body id="home">
+    <div id="title_scroll_trigger"></div>
+    <div id="menuBar" class="inclBorderSize rel">
+        <div class="fJustifyB fillY">
+            <div id="menuBar-left">
+                <a class="fAlignC margin margin__0__5px" href="#">
+                    <div id="siteTitle" title="MOVILITI: home" class="pixelArt rel" data-bg="logoPlain">
+                        <div data-insert="vehicle" data-vehicle-types="trainRE trainICE bus boat"></div>
+                    </div>
+                </a>
+            </div>
+            <div id="menuBar-center">
+                <div class="rel fillY fAlignC rel">
+                    <div data-insert-button="dropDownMenuButton" data-button-text="DISCOVER" data-button-menu="nav"></div>
+                </div>
+            </div>
+            <div id="menuBar-right">
+                <div class="rel fillY inclBorderSize fAlignC padding padding__4px">
+                    <div id="accButton" class="inclBorderSize circle">
+                        <div class="accButton-pfp pfp" data-insert="pfp"></div>
+                        <div class="right right__0" data-insert="accMenu"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Title -->
+    <div id="main_title">
+        <div id="title_container">
+            <h1 class="scroll_title">Modern Mobility</h1>
+        </div>
+    </div>
+    <div class="fJustifyC padding padding__10px__0__30px">
+        <div>
+            <h3>Together against disappointment - with moviliti. <a href="our-mission">Learn more</a></h3>
+        </div>
+    </div>
+    <div class="fJustifyC rel">
+        <div data-insert-button="dropDownMenuButton" data-button-text="DISCOVER" data-button-menu="nav"></div>
+    </div>
+
+    <div id="bottomSpace"></div>
+    <div data-insert="footer"></div>
+
+    <div data-insert="extraButtons"></div>
+</body>
+
+</html>
