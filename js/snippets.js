@@ -1,7 +1,7 @@
 /*
 NOTE:   This script contains the system for managin snippets
         (shortcodes in the HTML document which are replaced by code)
-        Public functions are accessible under the namespace SNIP.
+        Public functions and data are accessible under the namespace SNIP.
         
         This script does NOT contain buttons. Those can be found in buttons.js
 */
@@ -60,7 +60,7 @@ $(document).ready(function() {
     SNIP.SNIPPETS.navMenu = COMMON.makeMenu('nav', 'floating', [
         ['Home', ""],
         ['Our Mission', "our-mission"],
-        ['Contact', "contact"]
+        ['Contact', "#"]
     ]);
 
     SNIP.SNIPPETS.accMenu = COMMON.makeMenu('acc', 'floating', [
@@ -83,7 +83,7 @@ $(document).ready(function() {
     SNIP.SNIPPETS.extraButtons = $('<div>').attr('id', 'extraButtons');
     SNIP.SNIPPETS.extraButtons.append(
         '<div id="extraButtons-left">' + 
-            '<div data-insert-button="uiButton" data-button-icon="lang" data-button-function=""></div>' +
+            //'<div data-insert-button="uiButton" data-button-icon="lang" data-button-function=""></div>' +
         '</div>' +
         '<div id="extraButtons-right">' +
             '<div data-insert-button="uiButton" data-button-icon="up" data-button-function=""></div>' +
