@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+    <rect width="20" height="20" fill="black" />
+    <rect width="21" height="21" fill="white" mask="url(#icon-inv)" />
+    <mask id="icon-inv">
+        <rect width="20" height="20" fill="white" />
+        <path transform="matrix(4.7301669,0,0,4.7301669,-2.515233,-5.8852839)" style="fill:black;stroke-width:.264583" d="m 1.984375,1.8546282 c 0.3308521,-0.5730527 0.9921874,-0.5728397 1.3229166,-1e-7 l 1.3229166,2.2913588 c 0.3306565,0.5727139 10e-8,1.1456795 -0.6614582,1.1456795 H 1.3229165 c -0.66145818,0 -0.99211465,-0.5729655 -0.66145818,-1.1456794 z" />
+    </mask>
+</svg>

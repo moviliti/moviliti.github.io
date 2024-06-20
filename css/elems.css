@@ -91,12 +91,30 @@
     cursor: pointer;
     background-color: var(--c3);
     pointer-events: all;
+    box-shadow: var(--neumorphicShadow);
+}
+.uiButton:has(icon[data-icon-mask="mask"]) {
+    position: relative;
+    background-color: transparent;
+}
+.uiButton:has(icon[data-icon-mask="mask"])::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--c3);
+    mask: url("../resources/img/emptymasks/20in50.svg") luminance no-repeat;
 }
 .uiButton icon {
-
-    background-color: var(--c1);
-    border-radius: 50%;
+    background-color: var(--c3);
 }
+.uiButton icon div {
+    background-color: var(--c1);
+}
+        
 /*** :SNIPPETS ***/
 
 
@@ -160,8 +178,8 @@
 }
 
 #extraButtons {
-    position: fixed;
-    bottom: 0;
+    position: sticky;
+    top: calc(100% - 80px);
     width: 100%;
     display: flex;
     justify-content: space-between;

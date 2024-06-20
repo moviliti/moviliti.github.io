@@ -4,6 +4,7 @@ NOTE:   This script contains the system for managin snippets
         Public functions and data are accessible under the namespace SNIP.
         
         This script does NOT contain buttons. Those can be found in buttons.js
+        This script does NOT contain icons. Those can be found in icons.js
 */
 
 window.SNIP = {};
@@ -86,7 +87,7 @@ $(document).ready(function() {
             //'<div data-insert-button="uiButton" data-button-icon="lang" data-button-function=""></div>' +
         '</div>' +
         '<div id="extraButtons-right">' +
-            '<div data-insert-button="uiButton" data-button-icon="up" data-button-function=""></div>' +
+            '<div data-insert-button="uiButton" data-button-icon="up" data-button-icon-color="black" data-button-icon-mask="mask" data-button-function=""></div>' +
         '</div>'
     );
     

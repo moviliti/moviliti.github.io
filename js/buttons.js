@@ -1,5 +1,5 @@
 /*
-NOTE:
+NOTE:   This script generates different button templates.
 */
 
 $(document).ready(function() {
@@ -19,10 +19,11 @@ $(document).ready(function() {
         let currentButton = $(this);
         let buttonFunction = currentButton.attr('data-button-function');
         let buttonIcon = currentButton.attr('data-button-icon');
-        currentButton.replaceWith(
-            '<div class="uiButton" onclick="' + buttonFunction + '">' +
-                '<icon data-icon="' + buttonIcon + '"></icon>' +
-            '</div>'
-        ); // TODO:
+        let buttonIconColor = currentButton.attr('data-button-icon-color');
+        let buttonIconMask = currentButton.attr('data-button-icon-mask');
+        let buttonIconInv = currentButton.attr('data-button-icon-inv');
+        let newButton = $('<div>').attr('class', 'uiButton').attr('onclick', buttonFunction);
+        newButton.append('<icon data-icon="' + buttonIcon + '" data-icon-color="' + buttonIconColor + '" data-icon-mask="' + buttonIconMask + '" data-icon-inv="' + buttonIconInv + '"></icon>');
+        currentButton.replaceWith(newButton);
     });
 });
