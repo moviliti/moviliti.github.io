@@ -74,7 +74,9 @@ $(document).ready(function() {
         vehOffset = vehicle.css(vehSrcDirection);
         vehicle.css('transition', vehSrcDirection + ' ' + duration + 'ms linear');
         vehicle.css(vehSrcDirection, '100%');
+        vehicle.css('opacity', '1');
         await COMMON.sleep(duration + durationBuffer);
+        vehicle.css('opacity', '0');
         vehicle.css('transition', '');
         vehicle.css(vehSrcDirection, vehOffset);
     }
