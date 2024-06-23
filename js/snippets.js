@@ -87,7 +87,7 @@ $(document).ready(function() {
             //'<div data-insert-button="uiButton" data-button-icon="lang" data-button-function=""></div>' +
         '</div>' +
         '<div id="extraButtons-right">' +
-            '<div data-insert-button="uiButton" data-button-icon="up" data-button-icon-color="black" data-button-icon-mask="mask" data-button-function=""></div>' +
+            '<div data-insert-button="uiButton" data-button-icon="up" data-button-icon-color="black" data-button-icon-mask="mask" data-button-function="COMMON.scrollToTop()"></div>' +
         '</div>'
     );
     

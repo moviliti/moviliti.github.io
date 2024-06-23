@@ -181,10 +181,16 @@
     position: sticky;
     top: calc(100% - 80px);
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    height: 0;
     pointer-events: none;
 }
 #extraButtons-left, #extraButtons-right {
     padding: 15px;
+    position: absolute;
+}
+#extraButtons-left {
+    left: 0;
+}
+#extraButtons-right {
+    right: 0;
 }

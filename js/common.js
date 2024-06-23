@@ -31,7 +31,7 @@ $(function() {
             return elem.attr('class').split(' ');
         }
         return elem
-    }
+    };
     COMMON.appendClasses = function(elem, classNames) {
         if (classNames) {
             for (let i = 0; i < classNames.length; i++) {
@@ -39,10 +39,10 @@ $(function() {
             }
         }
         return elem;
-    }
+    };
     COMMON.isLightMode = function() {
         return window.matchMedia('(prefers-color-scheme: light)').matches;
-    }
+    };
     COMMON.setBG = function(elem, bgName) {
         let bgData = COMMON.bgs[bgName];
         let isSingleStyle = Boolean(bgData[0]);
@@ -55,11 +55,11 @@ $(function() {
         elem.css('background-image', 'url(' + imgDirPath + bgPath + ')');
         elem.addClass('imgBG');
         return elem;
-    }
+    };
 
     COMMON.sleep = function(milliseconds) {
         return new Promise(resolve => setTimeout(resolve, milliseconds));
-    }
+    };
 
     COMMON.makeMenu = function(menuName, menuType, itemsData) {
         let menu = $('<div>').attr('class', menuName + 'Menu menu menu-' + menuType);
@@ -72,7 +72,7 @@ $(function() {
         menu.append(menuItemsCon);
 
         return menu;
-    }
+    };
 
     COMMON.makeMenuButton = function(buttonName, buttonContent, menu, menuPosition) {
         let posCSS;
@@ -97,5 +97,11 @@ $(function() {
         button.append(menu);
 
         return button;
-    }
+    };
+
+    COMMON.scrollToTop = function() {
+        $('html, body').animate({
+            'scrollTop': 0,
+        }, 1000);
+    };
 });

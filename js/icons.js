@@ -41,7 +41,6 @@ async function setIcon(icon, $) {
         return;
     }
     let currentIconColor = currentIcon.attr('data-icon-color');
-    console.log(currentIcon.attr('data-icon')); //debug
     let currentIconData = SNIP.ICONS[currentIconName];
     let imageRole;
     if (currentIcon.attr('data-icon-mask') === 'mask') {
