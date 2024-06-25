@@ -25,10 +25,10 @@
     /*** :THEME (DEFAULT) ***/
 
     overflow-x: hidden;
+    /*
     scrollbar-width: thin;
     scrollbar-color: var(--c7) var(--c0);
-    /*scrollbar-color: var(--c4) transparent;
-    scrollbar-arrow-color: none;*/
+    */
 }
 @media (prefers-color-scheme: light) { :root {
     /*** THEME (LIGHT MODE): ***/
@@ -48,6 +48,19 @@
     /*** :THEME (LIGHT MODE) ***/
 } }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+/*
+::-webkit-scrollbar-track {}
+::-webkit-scrollbar-corner {}
+::-webkit-scrollbar-button {}
+::-webkit-scrollbar-track-piece {}
+*/
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: -2px -1px 6px var(--c7) inset;
+}
 
 @font-face {
     font-family: Comfortaa;
@@ -99,7 +112,6 @@ icon > div {
 
 body {
     background-color: var(--c0);
-    box-shadow: inset 0px 20px 20px var(--c5);
 }
 
 .f, .fJustifyA, .fJustifyB, .fJustifyC, .fJustifyE, .fAlignC {
