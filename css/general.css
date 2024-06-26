@@ -47,11 +47,6 @@
     --c8: #e0e0e0 !important;
     /*** :THEME (LIGHT MODE) ***/
 } }
-@media (max-width: 960px) {
-    /* MOBILE ONLY: */
-
-    /* :MOBILE ONLY */
-}
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -99,6 +94,7 @@ span {
 }
 h1, h2, h3, h4 {
     font-family: 'Comfortaa-bold', sans-serif;
+    text-align: center;
 }
 icon {
     display: inline-block;
