@@ -41,7 +41,7 @@ $(function() {
         return elem;
     };
     COMMON.isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches;
-    COMMON.isMobile = window.matchMedia('(max-width: 600px)').matches;
+    COMMON.isMobile = window.matchMedia('(max-width: 960px)').matches;
     COMMON.setBG = function(elem, bgName) {
         let bgData = COMMON.bgs[bgName];
         let isSingleStyle = Boolean(bgData[0]);

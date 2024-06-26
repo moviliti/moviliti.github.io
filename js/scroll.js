@@ -6,11 +6,15 @@ $(function() {
     let s2a1 = {
       targets: '#title_container .scroll_title',
       //opacity: [0.3,1],
-      scale: [2.2,1.5],
+      scale: [2.2, 1.5],
       duration: 200,
       delay: 0,
       easing: 'easeInOutSine'
     };
+
+    if (COMMON.isMobile) {
+      s2a1.scale = [1.5, 1]
+    }
 
     tl2.add(s2a1)
 

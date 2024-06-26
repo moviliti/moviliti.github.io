@@ -21,10 +21,11 @@
 #title_container .scroll_title {
   text-align: center;
   font-size: 48px;
-  color: transparent;
+  color: rgba(0,0,0,0.2);
   background-color: var(--c5);
   background: linear-gradient(90deg, var(--c5), var(--c1));
   background-clip: text;
+  -webkit-background-clip: text;
   filter: drop-shadow(2px 2px 3px var(--c3)) drop-shadow(-2px -2px 3px var(--c6));
 }
 
