@@ -13,7 +13,7 @@ $(function() {
     };
 
     if (COMMON.isMobile) {
-      s2a1.scale = [1.5, 1]
+      s2a1.scale = [1.6, 1.2]
     }
 
     tl2.add(s2a1)
