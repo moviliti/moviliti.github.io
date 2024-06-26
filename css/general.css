@@ -47,6 +47,11 @@
     --c8: #e0e0e0 !important;
     /*** :THEME (LIGHT MODE) ***/
 } }
+@media (max-width: 600px) {
+    /* MOBILE ONLY: */
+    
+    /* :MOBILE ONLY */
+}
 
 ::-webkit-scrollbar {
     width: 10px;

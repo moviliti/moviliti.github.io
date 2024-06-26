@@ -44,6 +44,7 @@ $(document).ready(function() {
                 vehicle.attr('data-vehicle-ratio', 0);
             }
             COMMON.setBG(vehicle, ANIM.vehiclePrefix + vehicleTypes[i]);
+            vehicle.css('opacity', '0');
             vehicleCon.append(vehicle);
         }
     });

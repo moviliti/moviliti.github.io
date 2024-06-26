@@ -134,6 +134,7 @@
     display: flex;
     justify-content: space-between;
     height: var(--menuBar-height);
+    gap: 10px;
 }
 #menuBar-left {
     padding-left: var(--logo-paddingLeft);

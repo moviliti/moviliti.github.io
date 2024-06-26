@@ -40,9 +40,8 @@ $(function() {
         }
         return elem;
     };
-    COMMON.isLightMode = function() {
-        return window.matchMedia('(prefers-color-scheme: light)').matches;
-    };
+    COMMON.isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches;
+    COMMON.isMobile = window.matchMedia('(max-width: 600px)').matches;
     COMMON.setBG = function(elem, bgName) {
         let bgData = COMMON.bgs[bgName];
         let isSingleStyle = Boolean(bgData[0]);
@@ -50,7 +49,7 @@ $(function() {
         if (isSingleStyle) {
             bgPath = bgData[0];
         } else {
-            bgPath = bgData[1 + COMMON.isLightMode()];
+            bgPath = bgData[1 + COMMON.isLightMode];
         }
         elem.css('background-image', 'url(' + imgDirPath + bgPath + ')');
         elem.addClass('imgBG');

@@ -14,12 +14,19 @@ $(document).ready(function() {
     });
 
     animationContext = '#siteTitle > .vehicleCon > .vehicle'
+    
+    if (COMMON.isMobile) {
+        durationFactor = 500;
+    } else {
+        durationFactor = 1000;
+    }
+    
     ANIM.loopThroughVehicles(animationContext, [
-        ['trainRE', 4000],
-        ['trainICE', 2000],
-        ['bus', 12000, 2000],
-        //['bike', 20000],
-        ['boat', 5000],
+        ['trainRE', 4 * durationFactor],
+        ['trainICE', 2 * durationFactor],
+        ['bus', 12 * durationFactor],
+        //['bike', 20],
+        ['boat', 5 * durationFactor],
     ]);
 
     $('#home #main_title #title_container').css('position', 'sticky');
