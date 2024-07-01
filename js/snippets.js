@@ -59,18 +59,32 @@ $(document).ready(function() {
     SNIP.SNIPPETS.pfp = COMMON.setBG($('<div>'), 'avatar').addClass('pixelArt');
     
     SNIP.SNIPPETS.navMenu = COMMON.makeMenu('nav', 'floating', [
-        ['Home', ""],
-        ['Our Mission', "our-mission"],
-        ['Contact', "#"]
+        ['Home', "/"],
+        ['About Us', "/about-us"],
+        // ['Our Mission', "/our-mission"],
+        ['Contact', "/about-us/#contact"]
     ]);
 
     SNIP.SNIPPETS.accMenu = COMMON.makeMenu('acc', 'floating', [
-        ['My Account', ""],
-        ['Bookmarks', ""],
-        ['Recent Connections', ""],
-        ['Settings', ""],
-        ['Logout', ""]
+        ['My Account', "/account"],
+        ['Bookmarks', "/account/#bookmarks"],
+        ['Recent Connections', "/go/#recent-connections"],
+        ['Settings', "/account/settings"],
+        ['Logout', "/account/logout"]
     ]);
+
+    const newTab = COMMON.newTab;
+    SNIP.SNIPPETS.aboutMenu = COMMON.makeMenu('about', 'floating', [
+        ['Business model & \nCustomer segmentation', "/resources/exercises/DH_4_ü2.pdf", newTab],
+        ['Solution & Product', "/resources/exercises/DH_4_ü3.pdf", newTab],
+        ['Market & Competition', "/resources/exercises/DH_4_ü4.pdf", newTab],
+        ['Brand strategy', "/resources/exercises/DH_4_ü5.pdf", newTab],
+        ['Marketing', "/resources/exercises/DH_4_ü6.pdf", newTab],
+        ['Pricing strategy', "/resources/exercises/DH_4_ü7.pdf", newTab],
+        ['Financial planning', "/resources/exercises/DH_4_ü8.pdf", newTab]
+    ]);
+
+    SNIP.SNIPPETS.goMenu = $('<div>'); //TODO:
     
     SNIP.SNIPPETS.vehicleModule = $('<div>').attr('class', 'vehicleCon');
 
@@ -95,6 +109,8 @@ $(document).ready(function() {
         ['pfp', SNIP.SNIPPETS.pfp],
         ['accMenu', SNIP.SNIPPETS.accMenu],
         ['navMenu', SNIP.SNIPPETS.navMenu],
+        ['goMenu', SNIP.SNIPPETS.goMenu],
+        ['aboutMenu', SNIP.SNIPPETS.aboutMenu],
         ['vehicle', SNIP.SNIPPETS.vehicleModule],
         ['footer', SNIP.SNIPPETS.footer],
         ['extraButtons', SNIP.SNIPPETS.extraButtons]

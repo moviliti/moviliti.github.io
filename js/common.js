@@ -60,12 +60,21 @@ $(function() {
         return new Promise(resolve => setTimeout(resolve, milliseconds));
     };
 
+    COMMON.newTab = {'rel': 'noreferrer noopener', 'target': 'blank'};
+
     COMMON.makeMenu = function(menuName, menuType, itemsData) {
         let menu = $('<div>').attr('class', menuName + 'Menu menu menu-' + menuType);
         let menuItemsCon = $('<div>').attr('class', menuName + 'Menu-itemsCon menu-itemsCon');
         let menuItems = '';
         for (let i = 0; i < itemsData.length; i++) {
-            menuItems += '<a href="' + itemsData[i][1] + '"><div class="' + menuName + 'Menu-item menu-item"><span>' + itemsData[i][0] + '</span></div></a>';
+            options = '';
+            /*if (itemsData[i][2] != undefined) {
+                console.log(itemsData[i][2]);
+                for (const [option, value] in Object.entries(itemsData[i][2])) {
+                    options += ' ' + option + '="' + value + '"';
+                }
+            }*/
+            menuItems += '<a href="' + itemsData[i][1] + '"' + options + '><div class="' + menuName + 'Menu-item menu-item"><span>' + itemsData[i][0] + '</span></div></a>';
         }
         menuItemsCon.append(menuItems);
         menu.append(menuItemsCon);

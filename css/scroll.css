@@ -1,4 +1,4 @@
-#home #main_title {
+#home #mainTitle {
   height: calc(100vh + 200px);
 }
 
@@ -17,18 +17,3 @@
   width: 100%;
   top: calc(var(--menuBar-height) + var(--logoTunnel-height) + 30vh);
 }
-
-#title_container .scroll_title {
-  text-align: center;
-  font-size: 48px;
-  color: rgba(0,0,0,0.2);
-  background-color: var(--c5);
-  background: linear-gradient(90deg, var(--c5), var(--c1));
-  background-clip: text;
-  -webkit-background-clip: text;
-  filter: drop-shadow(2px 2px 3px var(--c3)) drop-shadow(-2px -2px 3px var(--c6));
-}
-
-/* #menuBar { */
-/*   position: sticky; */
-/* } */

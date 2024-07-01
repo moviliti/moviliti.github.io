@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="/css/general.css" />
     <link rel="stylesheet" href="/css/elems.css" />
     <link rel="stylesheet" href="/css/snippets.css" />
-    <link rel="stylesheet" href="/css/scroll.css" />
     <link rel="stylesheet" href="index.css" />
     
     <!-- SCRIPTS -->
@@ -39,7 +38,6 @@
 </head>
 
 <body id="home">
-    <div id="title_scroll_trigger"></div>
     <div id="menuBar" class="inclBorderSize rel">
         <div class="fJustifyB fillY">
             <div id="menuBar-left">
@@ -49,17 +47,13 @@
                     </div>
                 </a>
             </div>
-            <div id="menuBar-center">
-                <div class="rel fillY fAlignC">
-                    <div data-insert-button="dropDownMenuButton" data-button-text="GO" data-button-menu="go"></div>
-                </div>
-            </div>
+            <div id="menuBar-center"></div>
             <div id="menuBar-right">
                 <div class="rel fillY fAlignC">
                     <div data-insert-button="dropDownMenuButton" data-button-text="DISCOVER" data-button-menu="nav"></div>
                 </div>
-                <div class="menuBarButtonCon">
-                    <div id="accButton" class="circle menuBarButton">
+                <div class="rel fillY inclBorderSize fAlignC padding padding__4px">
+                    <div id="accButton" class="inclBorderSize circle">
                         <div class="accButton-pfp pfp" data-insert="pfp"></div>
                         <div class="right right__0" data-insert="accMenu"></div>
                     </div>
@@ -69,22 +63,35 @@
     </div>
     <div id="topSpace"></div>
 
-    <!-- Title -->
-    <div id="mainTitle">
-        <div id="title_container">
-            <h1 class="scroll_title">Modern Mobility</h1>
+    <div class="contentBox">
+        <div id="mainTitle" class="title">
+            <h1>About Us</h1>
+        </div>
+        <div>
+            <div class="fJustifyC">
+                <span style="text-align: center;">We are a tech startup based in Hamburg, Germany, <br />looking to revolutionize public transport for everyone.</span>
+            </div>
+            <div id="learn-more" class="focusPointBox">
+                <div class="fJustifyC rel fillX">
+                    <div data-insert-button="dropDownMenuButton" data-button-text="LEARN MORE" data-button-menu="about"></div>
+                </div>
+            </div>
         </div>
     </div>
+
     <!-- at this point the extra buttons should become visible -->
     <div data-insert="extraButtons"></div>
-    <div class="fJustifyC padding padding__35px__0__30px">
-        <div>
-            <h3>Together against disappointment - with moviliti. <a href="/about-us">Learn more</a></h3>
+
+    <div id="contact">
+        <div class="contentBox">
+            <div class="title">
+                <h1>Contact</h1>
+            </div>
+            <div class="fJustifyC">
+                <span><a href="mailto:fake@email.address">fake@email.address</a></span>
+            </div>
         </div>
-    </div>
-    <div class="fJustifyC rel">
-        <div data-insert-button="dropDownMenuButton" data-button-text="DISCOVER" data-button-menu="nav"></div>
-    </div>
+    </div>    
 
     <div id="bottomSpace"></div>
     <div data-insert="footer"></div>

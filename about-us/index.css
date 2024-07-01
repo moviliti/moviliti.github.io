@@ -1,0 +1,19 @@
+#topSpace {
+    height: 120px;
+}
+
+#bottomSpace {
+    height: 20vh;
+}
+
+#menuBar {
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+}
+
+#learn-more {
+    height: calc(100vh - var(--menuBar-height) - 100px);
+    align-items: start !important;
+    padding-top: 50px;
+}
