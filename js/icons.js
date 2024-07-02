@@ -21,6 +21,17 @@ SNIP.ICONS = {
             'transform': 'translate(-10px, -10px)',
         },
     },
+    'right': {
+        'iconURL': "../resources/img/ui-icons/arrow-up.svg",
+        'mask-mode': 'alpha',
+        'iconURL-inv': "../resources/img/ui-icons/arrow-up-inv.svg",
+        'mask-mode-inv': 'luminance',
+        'css': {
+            'width': '20px',
+            'height': '20px',
+            'transform': 'translate(-10px, -10px) rotateZ(90deg)',
+        }
+    },
     'down': {
         'iconURL': "../resources/img/ui-icons/arrow-up.svg",
         'mask-mode': 'alpha',
@@ -32,12 +43,30 @@ SNIP.ICONS = {
             'transform': 'translate(-10px, -10px) scaleY(-1)',
         }
     },
+    'left': {
+        'iconURL': "../resources/img/ui-icons/arrow-up.svg",
+        'mask-mode': 'alpha',
+        'iconURL-inv': "../resources/img/ui-icons/arrow-up-inv.svg",
+        'mask-mode-inv': 'luminance',
+        'css': {
+            'width': '20px',
+            'height': '20px',
+            'transform': 'translate(-10px, -10px) rotateZ(-90deg)',
+        }
+    },
 };
+
+async function makeSpaceForIcon(elem, $) {
+    let currentElem = $(elem);
+    let currentElemWidth = currentElem.width();
+    let currentElemHeight = currentElem.height();
+    currentElem.css('width', (currentElemWidth + currentElemHeight + 2) + 'px');
+}
 
 async function setIcon(icon, $) {
     let currentIcon = $(icon);
     let currentIconName = currentIcon.attr('data-icon');
-    if (!currentIconName) {
+    if ((!currentIconName) || !(currentIconName in SNIP.ICONS)) {
         return;
     }
     let currentIconColor = currentIcon.attr('data-icon-color');
@@ -69,6 +98,9 @@ async function setIcon(icon, $) {
 }
 
 $(document).ready(function() {   
+    $('.needsSpaceForIcon').each(function() {
+        makeSpaceForIcon(this, $);
+    });
     $('icon').each(function() {
         setIcon(this, $);
     });

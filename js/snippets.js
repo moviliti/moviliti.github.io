@@ -1,5 +1,5 @@
 /*
-NOTE:   This script contains the system for managin snippets
+NOTE:   This script contains the system for managing snippets
         (shortcodes in the HTML document which are replaced by code)
         Public functions and data are accessible under the namespace SNIP.
         
@@ -84,7 +84,22 @@ $(document).ready(function() {
         ['Financial planning', "/resources/exercises/DH_4_ü8.pdf", newTab]
     ]);
 
-    SNIP.SNIPPETS.goMenu = $('<div>'); //TODO:
+    /*SNIP.SNIPPETS.goMenu = $('<div>').append( //COMMON.makeFormMenu
+        '<form action="/go">' +
+            '<label for="from">from:</label>' +
+            '<input type="text" name="from" id="from" placeholder="Kasernenstraße" />' +
+            '<label for="to">to:</label>' +
+            '<input type="text" name="to" id="to" placeholder="Hamburg Hbf" />' +
+        '</form>'
+    ); //TODO:*/
+    SNIP.SNIPPETS.goMenu = COMMON.makeFormMenu('go', 'floating', [
+        ['from', 'from:', 'Kasernenstraße'],
+        ['to', 'to:', 'Hamburg Hbf']
+    ], {
+        'target': '/go/',
+        'buttonContent': 'go',
+        'buttonIcon': 'right'
+    });
     
     SNIP.SNIPPETS.vehicleModule = $('<div>').attr('class', 'vehicleCon');
 

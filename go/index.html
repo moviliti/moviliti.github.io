@@ -29,9 +29,12 @@
     <script src="/js/icons.js"></script>
     <script src="/js/animations.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/go.js"></script>
+    <script src="/go/app.js"></script>
+
 </head>
 
-<body id="home">
+<body>
     <div id="menuBar" class="inclBorderSize rel">
         <div class="fJustifyB fillY">
             <div id="menuBar-left">
@@ -42,9 +45,6 @@
                 </a>
             </div>
             <div id="menuBar-center">
-                <div class="rel fillY fAlignC">
-                    <div data-insert-button="dropDownMenuButton" data-button-text="GO" data-button-menu="go"></div>
-                </div>
             </div>
             <div id="menuBar-right">
                 <div class="rel fillY fAlignC">
@@ -63,33 +63,35 @@
 
     <div class="contentBox">
         <div id="mainTitle" class="title">
-            <h1>About Us</h1>
+            <h1>Start your next journey</h1>
         </div>
-        <div>
-            <div class="fJustifyC">
-                <span style="text-align: center;">We are a tech startup based in Hamburg, Germany, <br />looking to revolutionize public transport for everyone.</span>
-            </div>
-            <div id="learn-more" class="focusPointBox">
-                <div class="fJustifyC rel fillX">
-                    <div data-insert-button="dropDownMenuButton" data-button-text="LEARN MORE" data-button-menu="about"></div>
-                </div>
+        <div id="journeyPlanner">
+            <div id="journeyPlannerParams">
+                <form action="/go/">
+                    <label for="from">From: </label>
+                    <input type="text" id="from" name="from" />
+                    <label for="via">Via: </label>
+                    <input type="text" id="via" name="via" />
+                    <label for="to">To: </label>
+                    <input type="text" id="to" name="to" />
+                    <br />
+                    <label for="date">Date: </label>
+                    <input type="date" id="date" name="date" />
+                    <label for="time">Time: </label>
+                    <input type="time" id="time" name="time" />
+                    <input type="radio" id="departure" name="timeRole" value="departure" />
+                    <label for="departure">departure</label>
+                    <input type="radio" id="arrival" name="timeRole" value="arrival" />
+                    <label for="arrival">arrival</label>
+                    <br /><br />
+                    <input type="submit" value="Calculate Route..." />
+                </form>
             </div>
         </div>
     </div>
 
     <!-- at this point the extra buttons should become visible -->
-    <div data-insert="extraButtons"></div>
-
-    <div id="contact">
-        <div class="contentBox">
-            <div class="title">
-                <h1>Contact</h1>
-            </div>
-            <div class="fJustifyC">
-                <span><a href="mailto:fake@email.address" rel="noreferrer noopener" target="_blank">fake@email.address</a></span>
-            </div>
-        </div>
-    </div>    
+    <div data-insert="extraButtons"></div>   
 
     <div id="bottomSpace"></div>
     <div data-insert="footer"></div>

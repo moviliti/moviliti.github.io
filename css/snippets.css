@@ -6,6 +6,15 @@
 .menu-item {
     cursor: pointer;
 }
+.menu-formCon {
+    padding-bottom: 5px;
+}
+.menu-submitButton {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 .menu-floating {
     position: absolute;
     top: 0;
@@ -19,13 +28,13 @@
 *:hover > .menu-floating {
     opacity: 1;
 }
-.menu-floating > .menu-itemsCon {
+.menu-floating > .menu-itemsCon, .menu-floating > .menu-formCon {
     background-color: var(--c3);
     border-radius: var(--popup-borderRadius);
     box-shadow: var(--floatShadow);
     overflow: hidden;
 }
-.menu-floating .menu-item {
+.menu-floating .menu-item, .menu-floating .menu-formItem {
     padding: 5px 5px;
 }
 .menu-floating a:hover > .menu-item {
@@ -50,6 +59,7 @@
     background-image: linear-gradient(90deg, var(--c8), var(--c5));
     background-clip: text;
 }
+
 
 .vehicleCon {
     position: absolute;

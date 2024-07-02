@@ -1,0 +1,25 @@
+#topSpace {
+    height: 120px;
+}
+
+#bottomSpace {
+    height: 20vh;
+}
+
+#menuBar {
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+}
+
+.title {
+    justify-content: left;
+}
+
+input {
+    border: none;
+    background-color: var(--c5);
+}
+input:not([type="radio"]), input[type="radio"] + label {
+    margin: 5px 10px 5px 0;
+}

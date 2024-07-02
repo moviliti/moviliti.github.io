@@ -69,8 +69,6 @@ $(function() {
         for (let i = 0; i < itemsData.length; i++) {
             options = '';
             if (itemsData[i][2] != undefined) {
-                console.log(itemsData[i][2]);
-                console.log(Object.entries(itemsData[i][2]));
                 for (const [option, value] of Object.entries(itemsData[i][2])) {
                     options += ' ' + option + '="' + value + '"';
                 }
@@ -82,6 +80,32 @@ $(function() {
 
         return menu;
     };
+
+    COMMON.makeFormMenu = function(menuName, menuType, itemsData, submitData) {
+        let menu = $('<div>').attr('class', menuName + 'Menu menu menu-' + menuType);
+        let menuFormCon = $('<div>').attr('class', menuName + 'Menu-formCon menu-formCon');
+        let menuForm = $('<form>').attr('action', submitData.target).attr('class', menuName + 'Menu-form menu-form');
+        let menuFormItems = '';
+        for (let i = 0; i < itemsData.length; i++) {
+            options = '';
+            /*if (itemsData[i][3] != undefined) {
+                for (const [option, value] of Object.entries(itemsData[i][3])) {
+                    options += ' ' + option + '="' + value + '"';
+                }
+            }*/
+            menuFormItems += '<div class="' + menuName + 'Menu-formItem menu-formItem"><label for="' + itemsData[i][0] + '">' + itemsData[i][1] + '</label><input type="text" id="' + itemsData[i][0] + '" name="' + itemsData[i][0] + '" value="' + itemsData[i][2] + '"' + options + ' /></div>';
+        }
+        submitButtonClasses = '';
+        if ((submitData.buttonIcon != undefined) && (submitData.buttonIcon != '')) {
+            submitButtonClasses += 'needsSpaceForIcon';
+        }
+        menuFormItems += '<div class="' + menuName + 'Menu-submitButton menu-submitButton"><div class="buttonNeedsI-con"><input type="submit" value="' + submitData.buttonContent + '" class="' + submitButtonClasses + '"/><icon data-icon="' + submitData.buttonIcon + '" /></div></div>';
+        menuForm.append(menuFormItems);
+        menuFormCon.append(menuForm);
+        menu.append(menuFormCon);
+
+        return menu;
+    }
 
     COMMON.makeMenuButton = function(buttonName, buttonContent, menu, menuPosition) {
         let posCSS;
