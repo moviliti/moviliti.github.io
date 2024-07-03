@@ -40,7 +40,7 @@ $(function() {
         }
         return elem;
     };
-    COMMON.isAccessibilityMode = False; //TODO:
+    COMMON.isAccessibilityMode = false; //TODO:
     COMMON.isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches;
     COMMON.isMobile = window.matchMedia('(max-width: 960px)').matches;
     COMMON.setBG = function(elem, bgName) {

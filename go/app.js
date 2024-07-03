@@ -49,8 +49,8 @@ $(document).ready(function() {
             )
         ) {
             $('#journeyPlannerParamsCon #' + id).prop('checked', true);
-        } else {
-            console.error('Unknown parameter type: '+ type);
+        } else if (type !== 'checkbox') {
+            console.warn('Unknown parameter type: '+ type);
             return undefined;
         }
 
