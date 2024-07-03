@@ -39,7 +39,6 @@ $(document).ready(function() {
             }
         }
         if ((type === 'text') || (type === 'select') || (type === 'datetime-local')) {
-            console.log('setting ' + id + ' to ' + value); //debug
             $('#journeyPlannerParamsCon #' + id).val(value);
         } else if (
             (type === 'radio')
