@@ -11,6 +11,7 @@
     /*** THEME (DEFAULT): ***/
     --standardShadow: 2px 2px 2px rgba(0,0,0,0.7);
     --neumorphicShadow: 1px 1px 5px rgba(255,255,255,0.4), -1px -1px 10px rgba(0,0,0,0.9);
+    --neumorphicShadow2: 1px 1px 5px rgba(255,255,255,0.1), -1px -1px 5px rgba(0,0,0,0.9);
     --floatShadow: 0px 0px 15px var(--c5);
     --c0: #081818;
     --c1: #ffffff;
@@ -25,18 +26,18 @@
     --c9a: rgba(0, 0, 0, 0.7);
     --c10: #ffffff;
     --c11: #ffff40;
+    --c12: #000000;
+    --c13: #ff4040;
     /*** :THEME (DEFAULT) ***/
 
     overflow-x: hidden;
-    /*
-    scrollbar-width: thin;
-    scrollbar-color: var(--c7) var(--c0);
-    */
+    color-scheme: dark;
 }
 @media (prefers-color-scheme: light) { :root {
     /*** THEME (LIGHT MODE): ***/
     --standardShadow: 2px 2px 2px rgba(0,0,0,0.7);
     --neumorphicShadow: 1px 1px 3px rgba(0,0,0,0.7), -1px -1px 5px rgba(255,255,255,0.7);
+    --neumorphicShadow2: 2px 2px 10px rgba(0,0,0,0.2), -1px -1px 10px rgba(255,255,255,1);
     --floatShadow: 5px 5px 20px rgba(0,0,0,0.7);
     --c0: #d0d0d0 !important;
     --c1: #080808 !important;
@@ -51,7 +52,10 @@
     --c9a: rgba(255,255,255,0.5) !important;
     --c10: #202020 !important;
     --c11: #ffff00 !important;
+    --c12: #000000 !important;
+    --c13: #ff4040 !important;
     /*** :THEME (LIGHT MODE) ***/
+    color-scheme: light;
 } }
 
 ::-webkit-scrollbar {
@@ -107,7 +111,7 @@ span > a, h1 > a, h2 > a, h3 > a, h4 > a, p > a {
 span > a:hover, h1 > a:hover, h2 > a:hover, h3 > a:hover, h4 > a:hover, p > a:hover {
     color: var(--c11);
 }
-span, p, label, input {
+span, p, label, input, select {
     font-family: 'Comfortaa', sans-serif;
 }
 h1, h2, h3, h4 {
@@ -131,16 +135,26 @@ icon > div {
     top: 50%;
     left: 50%;
 }
-input {
+label, select {
+    cursor: pointer;
+}
+input, select {
     border-radius: 20px;
     background-color: var(--c0);
     padding: 4px 8px;
 }
-input[type="submit"] {
+input[type="submit"], input[type="reset"] {
     cursor: pointer;
     border: none;
-    box-shadow: var(--neumorphicShadow);
-    background-color: var(--c7);
+    box-shadow: var(--neumorphicShadow2);
+}
+input[type="submit"] {
+    background-color: var(--c2);
+    color: var(--c12);
+}
+input[type="reset"] {
+    background-color: transparent;
+    color: var(--c13);
 }
 input.needsSpaceForIcon {
     text-align: left;
@@ -155,6 +169,7 @@ input.needsSpaceForIcon {
     right: 0;
     transform: scale(0.5);
     overflow: visible;
+    pointer-events: none;
 }
 
 .f, .fJustifyA, .fJustifyB, .fJustifyC, .fJustifyE, .fAlignC {

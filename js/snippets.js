@@ -83,15 +83,7 @@ $(document).ready(function() {
         ['Pricing strategy', "/resources/exercises/DH_4_ü7.pdf", newTab],
         ['Financial planning', "/resources/exercises/DH_4_ü8.pdf", newTab]
     ]);
-
-    /*SNIP.SNIPPETS.goMenu = $('<div>').append( //COMMON.makeFormMenu
-        '<form action="/go">' +
-            '<label for="from">from:</label>' +
-            '<input type="text" name="from" id="from" placeholder="Kasernenstraße" />' +
-            '<label for="to">to:</label>' +
-            '<input type="text" name="to" id="to" placeholder="Hamburg Hbf" />' +
-        '</form>'
-    ); //TODO:*/
+    
     SNIP.SNIPPETS.goMenu = COMMON.makeFormMenu('go', 'floating', [
         ['from', 'from:', 'Kasernenstraße'],
         ['to', 'to:', 'Hamburg Hbf']
@@ -111,14 +103,12 @@ $(document).ready(function() {
     );
 
     SNIP.SNIPPETS.extraButtons = $('<div>').attr('id', 'extraButtons');
-    SNIP.SNIPPETS.extraButtons.append(
-        '<div id="extraButtons-left">' + 
-            //'<div data-insert-button="uiButton" data-button-icon="lang" data-button-function=""></div>' +
-        '</div>' +
-        '<div id="extraButtons-right">' +
-            '<div data-insert-button="uiButton" data-button-icon="up" data-button-icon-color="black" data-button-icon-mask="mask" data-button-function="COMMON.scrollToTop()"></div>' +
-        '</div>'
-    );
+    SNIP.SNIPPETS.extraButtons.append(`
+        <div id="extraButtons-left"></div>
+        <div id="extraButtons-right">
+            <div data-insert-button="uiButton" data-button-icon="up" data-button-icon-color="black" data-button-icon-mask="mask" data-button-function="COMMON.scrollToTop()"></div>
+        </div>
+    `);
     
     snippets = [
         ['pfp', SNIP.SNIPPETS.pfp],

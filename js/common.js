@@ -40,6 +40,7 @@ $(function() {
         }
         return elem;
     };
+    COMMON.isAccessibilityMode = False; //TODO:
     COMMON.isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches;
     COMMON.isMobile = window.matchMedia('(max-width: 960px)').matches;
     COMMON.setBG = function(elem, bgName) {
@@ -99,7 +100,7 @@ $(function() {
         if ((submitData.buttonIcon != undefined) && (submitData.buttonIcon != '')) {
             submitButtonClasses += 'needsSpaceForIcon';
         }
-        menuFormItems += '<div class="' + menuName + 'Menu-submitButton menu-submitButton"><div class="buttonNeedsI-con"><input type="submit" value="' + submitData.buttonContent + '" class="' + submitButtonClasses + '"/><icon data-icon="' + submitData.buttonIcon + '" /></div></div>';
+        menuFormItems += '<div class="' + menuName + 'Menu-submitButton menu-submitButton"><div class="buttonNeedsI-con"><input type="submit" value="' + submitData.buttonContent + '" class="' + submitButtonClasses + '"/><icon data-icon="' + submitData.buttonIcon + '" data-icon-color="black" data-icon-mask="mask" /></div></div>';
         menuForm.append(menuFormItems);
         menuFormCon.append(menuForm);
         menu.append(menuFormCon);

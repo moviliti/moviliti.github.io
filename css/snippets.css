@@ -22,10 +22,10 @@
     transition: opacity 300ms;
     z-index: 10;
 }
-*:hover > .menu {
+*:hover > .menu, .menu:focus-within {
     visibility: visible;
 }
-*:hover > .menu-floating {
+*:hover > .menu-floating, .menu-floating:focus-within {
     opacity: 1;
 }
 .menu-floating > .menu-itemsCon, .menu-floating > .menu-formCon {
@@ -121,6 +121,6 @@
 .uiButton icon {
     background-color: var(--c3);
 }
-.uiButton icon div {
+.uiButton icon div, .menu-form icon div {
     background-color: var(--c1);
 }

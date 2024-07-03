@@ -1,3 +1,7 @@
+:root {
+    --inputFieldHeight: 24px;
+}
+
 #topSpace {
     height: 120px;
 }
@@ -16,10 +20,57 @@
     justify-content: left;
 }
 
-input {
+label {
+    line-height: var(--inputFieldHeight);
+}
+
+input, select {
     border: none;
     background-color: var(--c5);
+    height: var(--inputFieldHeight);
+    box-sizing: border-box;
 }
-input:not([type="radio"]), input[type="radio"] + label {
+
+.inputCon {
+    position: relative;
+}
+
+/*input:not([type="radio"]), input[type="radio"] + label {
     margin: 5px 10px 5px 0;
+}*/
+
+form .options {
+    display: flex;
+    padding: 5px 0 20px 0;
+    gap: 10px;
+}
+
+.journeyPlannerParams {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px 10px;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: var(--neumorphicShadow2);
+}
+
+.formFillButtonCon {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.formFillButton {
+    height: 100%;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.radioCon, .checkboxCon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="datetime-local"] {
+    cursor: pointer;
 }

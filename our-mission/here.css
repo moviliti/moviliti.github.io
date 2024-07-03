@@ -1,0 +1,28 @@
+.html, .body {
+    height: 100%,
+}
+
+#container {
+    margin: 55vh 0;
+    padding: 50px;
+    outline: 1px dashed orange;
+}
+
+#block {
+    padding: 10px;
+    border: 1px solid black;
+    font-family: Helvetica;
+}
+
+.section > .row > .col {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+#mission_heading {
+    position: relative;
+    overflow: hidden;
+}

@@ -7,12 +7,14 @@
     <meta name="robots" content="index, follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-    <title>moviliti</title>
+    <title>start journey - moviliti</title>
     <meta name="description" content="Together against disappointment - the most complete and accessible public transport app built on community." />
     <link rel="icon" type="x-icon" href="/resources/img/logo/px_moviliti_favicon_bl_96x96_r24.png" />
 
     <!-- LIBS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.3/moment-timezone-with-data.min.js"></script>
     
     <!-- STYLES -->
     <link rel="stylesheet" href="/css/env.css" />
@@ -23,18 +25,19 @@
     
     <!-- SCRIPTS -->
     <script src="/js/common.js"></script>
+    <script src="/js/go.js"></script>
     <script src="/js/varclass.js"></script>
     <script src="/js/snippets.js"></script>
+    <script src="/js/datetime.js"></script>
+    <script src="/go/app.js"></script>
     <script src="/js/buttons.js"></script>
     <script src="/js/icons.js"></script>
     <script src="/js/animations.js"></script>
     <script src="/js/main.js"></script>
-    <script src="/js/go.js"></script>
-    <script src="/go/app.js"></script>
 
 </head>
 
-<body>
+<body id="go">
     <div id="menuBar" class="inclBorderSize rel">
         <div class="fJustifyB fillY">
             <div id="menuBar-left">
@@ -66,25 +69,73 @@
             <h1>Start your next journey</h1>
         </div>
         <div id="journeyPlanner">
-            <div id="journeyPlannerParams">
+            <div id="journeyPlannerParamsCon">
                 <form action="/go/">
-                    <label for="from">From: </label>
-                    <input type="text" id="from" name="from" />
-                    <label for="via">Via: </label>
-                    <input type="text" id="via" name="via" />
-                    <label for="to">To: </label>
-                    <input type="text" id="to" name="to" />
-                    <br />
-                    <label for="date">Date: </label>
-                    <input type="date" id="date" name="date" />
-                    <label for="time">Time: </label>
-                    <input type="time" id="time" name="time" />
-                    <input type="radio" id="departure" name="timeRole" value="departure" />
-                    <label for="departure">departure</label>
-                    <input type="radio" id="arrival" name="timeRole" value="arrival" />
-                    <label for="arrival">arrival</label>
-                    <br /><br />
+                    <div class="options">
+                        <div class="journeyPlannerParams journeyPlannerParams-route">
+                            <label for="from">From:</label>
+                            <div class="station inputCon">
+                                <input type="text" id="from" name="from" />
+                            </div>
+                            <label for="via">Via:</label>
+                            <div class="station inputCon">
+                                <input type="text" id="via" name="via" />
+                            </div>
+                            <label for="to">To:</label>
+                            <div class="station inputCon">
+                                <input type="text" id="to" name="to" />
+                            </div>
+                        </div>
+                        <div class="journeyPlannerParams journeyPlannerParams-datetime">
+                            <label for="dateTime">When:</label>
+                            <input type="datetime-local" id="dateTime" name="dateTime" />
+                            <label for="timeZone">Timezone:</label>
+                            <select id="timeZone" name="timeZone"></select>
+                            <placeholder></placeholder>
+                            <div>
+                                <div class="radioCon">
+                                    <input type="radio" id="departure" name="timeRole" value="departure" checked="checked" />
+                                    <label for="departure">departure</label>
+                                </div>
+                                <div class="radioCon">
+                                    <input type="radio" id="arrival" name="timeRole" value="arrival" />
+                                    <label for="arrival">arrival</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="journeyPlannerParams journeyPlannerParams-options">
+                            <label for="sort">Filter:</label>
+                            <select id="sort" name="sort" value="speed">
+                                <option value="speed" selected="selected">fastest</option>
+                                <option value="sustainability">most sustainable</option>
+                                <option value="price">cheapest</option>
+                                <option value="security">most secure</option>
+                                <option value="accessibility">most accessible</option>
+                                <option value="weather">best weather</option>
+                            </select>
+                            <label for="additionalOptions">Options:</label>
+                            <div id="additionalOptions">
+                                <div class="checkboxCon">
+                                    <input type="checkbox" id="bike" name="bike" value="1" />
+                                    <label for="bike">Bicycle transport</label>
+                                </div>
+                                <div class="checkboxCon">
+                                    <input type="checkbox" id="rent" name="rent" value="1" />
+                                    <label for="rent">Show bike rental</label>
+                                </div>
+                                <div class="checkboxCon">
+                                    <input type="checkbox" id="visualImpairment" name="visualImpairment" value="1" />
+                                    <label for="visualImpairment">Visual impairment</label>
+                                </div>
+                                <div class="checkboxCon">
+                                    <input type="checkbox" id="wheelchair" name="wheelchair" value="1" />
+                                    <label for="wheelchair">Wheelchair transport</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <input type="submit" value="Calculate Route..." />
+                    <input type="reset" value="Clear everything" />
                 </form>
             </div>
         </div>

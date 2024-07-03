@@ -11,9 +11,9 @@ const defaultCSS = {
 
 SNIP.ICONS = {
     'up': {
-        'iconURL': "../resources/img/ui-icons/arrow-up.svg",
+        'iconURL': "/resources/img/ui-icons/arrow-up.svg",
         'mask-mode': 'alpha',
-        'iconURL-inv': "../resources/img/ui-icons/arrow-up-inv.svg",
+        'iconURL-inv': "/resources/img/ui-icons/arrow-up-inv.svg",
         'mask-mode-inv': 'luminance',
         'css': {
             'width': '20px',
@@ -22,9 +22,9 @@ SNIP.ICONS = {
         },
     },
     'right': {
-        'iconURL': "../resources/img/ui-icons/arrow-up.svg",
+        'iconURL': "/resources/img/ui-icons/arrow-up.svg",
         'mask-mode': 'alpha',
-        'iconURL-inv': "../resources/img/ui-icons/arrow-up-inv.svg",
+        'iconURL-inv': "/resources/img/ui-icons/arrow-up-inv.svg",
         'mask-mode-inv': 'luminance',
         'css': {
             'width': '20px',
@@ -33,9 +33,9 @@ SNIP.ICONS = {
         }
     },
     'down': {
-        'iconURL': "../resources/img/ui-icons/arrow-up.svg",
+        'iconURL': "/resources/img/ui-icons/arrow-up.svg",
         'mask-mode': 'alpha',
-        'iconURL-inv': "../resources/img/ui-icons/arrow-up-inv.svg",
+        'iconURL-inv': "/resources/img/ui-icons/arrow-up-inv.svg",
         'mask-mode-inv': 'luminance',
         'css': {
             'width': '20px',
@@ -44,9 +44,9 @@ SNIP.ICONS = {
         }
     },
     'left': {
-        'iconURL': "../resources/img/ui-icons/arrow-up.svg",
+        'iconURL': "/resources/img/ui-icons/arrow-up.svg",
         'mask-mode': 'alpha',
-        'iconURL-inv': "../resources/img/ui-icons/arrow-up-inv.svg",
+        'iconURL-inv': "/resources/img/ui-icons/arrow-up-inv.svg",
         'mask-mode-inv': 'luminance',
         'css': {
             'width': '20px',
@@ -54,6 +54,14 @@ SNIP.ICONS = {
             'transform': 'translate(-10px, -10px) rotateZ(-90deg)',
         }
     },
+    'location': {
+        'iconURL': "/resources/img/ui-icons/pin.svg",
+        'mask-mode': 'alpha',
+        'css': {
+            'width': '20px',
+            'height': '20px',
+        }
+    }
 };
 
 async function makeSpaceForIcon(elem, $) {
