@@ -2,25 +2,6 @@ $(document).ready(function() {
 
     const urlParams = new URLSearchParams(window.location.search);
 
-    GO.paramNames = { //TODO: generate this automatically
-        'from': 'text',
-        'via': 'text',
-        'to': 'text',
-        'dateTime': 'datetime-local',
-        'timeZone': 'select',
-        'timeRole': 'radio',
-        'sort': 'select',
-        'bike': 'checkbox',
-        'rent': 'checkbox',
-        'visualImpairment': 'checkbox',
-        'wheelchair': 'checkbox',
-    };
-    GO.defaultValues = {
-        'dateTime': DATETIME.now(),
-        'timeZone': DATETIME.currentTimeZone(),
-        'timeRole': 'departure',
-        'sort': 'speed',
-    }
 
     DATETIME.timeZoneSelector('#journeyPlannerParamsCon #timeZone');
 
@@ -33,7 +14,7 @@ $(document).ready(function() {
             return undefined;
         }
         const type = GO.paramNames[id];
-        if ((value == undefined) || (value == '') || (value == null)) {
+        if (COMMON.isNone(value)) {
             if (id in GO.defaultValues) {
                 value = GO.defaultValues[id];
             }
@@ -68,16 +49,6 @@ $(document).ready(function() {
         });
     }
 
-    GO.fav = {
-        'stations': [
-            'Kasernenstraße',
-            'Eißendorfer Straße',
-            'Harburg Rathaus',
-            'Heimfeld',
-            'Hamburg Hbf',
-        ]
-    };
-
     const stationButtonCon = `
         <div class="stationButtonCon formFillButtonCon">
             <div class="formFillButton locationButton" onclick="GO.set('from', 'TUHH (current location)')">
@@ -95,6 +66,10 @@ $(document).ready(function() {
     $('#journeyPlannerParamsCon .station').each(function(i) {
         $(this).append(stationButtonCon);
     });
+
+    if (GO.currentParams.from && GO.currentParams.to) {
+        GO.getRoute($('#journeyPlannerResultsCon'));
+    }
 
 
 });

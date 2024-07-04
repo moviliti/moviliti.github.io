@@ -50,6 +50,10 @@
     box-sizing: border-box;
     box-shadow: var(--neumorphicShadow);
 }
+.goMenuButton {
+    position: absolute;
+    transform: translateX(-50%);
+}
 #accButton {
     border: 2px solid rgba(255,255,255,0.4);
 }

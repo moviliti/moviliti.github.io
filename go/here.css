@@ -39,10 +39,14 @@ input, select {
     margin: 5px 10px 5px 0;
 }*/
 
-form .options {
+#journeyPlannerParamsCon .options {
     display: flex;
     padding: 5px 0 20px 0;
     gap: 10px;
+}
+
+#journeyPlannerParamsCon {
+    margin-bottom: 20px;
 }
 
 .journeyPlannerParams {
@@ -74,3 +78,30 @@ form .options {
 input[type="datetime-local"] {
     cursor: pointer;
 }
+
+#journeyPlannerResultsCon {
+    width: 100%;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: var(--neumorphicShadow2);
+    padding: 10px 10px;
+    box-sizing: border-box;
+}
+
+.journeyPlannerResult {
+    width: fit-content;
+    display: grid;
+    border-radius: 5px;
+    background-color: var(--c7);
+    padding: 10px 10px;
+    grid-template-columns: 5ch auto auto;
+    gap: 20px 15px;
+}
+
+.routeStepTimeInterval, .routeStepPlaces {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.routeStepInstructions {}

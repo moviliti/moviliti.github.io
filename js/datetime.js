@@ -4,6 +4,20 @@
 
 DATETIME = {}
 
+DATETIME.isToday = function(datetime, timeZone) {
+    return moment(datetime).tz(timeZone).isSame(moment(), 'day');
+}
+
+DATETIME.formatTime = function(dateTime, timeZone) {
+    let format;
+    if (DATETIME.isToday(dateTime, timeZone)) {
+        format = 'HH:mm';
+    } else {
+        format = 'D.M. HH:mm';
+    }
+    return moment(dateTime).tz(timeZone).format(format);
+}
+
 DATETIME.now = function() {
     return moment().format('YYYY-MM-DDTHH:mm');
 }

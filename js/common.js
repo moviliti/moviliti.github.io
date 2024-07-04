@@ -7,6 +7,10 @@ NOTE:   This script contains the COMMON namespace which can be accessed from all
 window.COMMON = {};
 
 $(function() {
+    COMMON.isNone = function(value) {
+        return ((value === undefined) || (value === null) || (value === ''));
+    };
+
     COMMON.currentYear = new Date().getFullYear();
 
     const imgDirPath = "../resources/img/";
